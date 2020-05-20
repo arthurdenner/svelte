@@ -315,11 +315,20 @@ export default class Element extends Node {
 					});
 				}
 
-				if (name === 'aria-hidden' && /^h[1-6]$/.test(this.name)) {
-					component.warn(attribute, {
-						code: `a11y-hidden`,
-						message: `A11y: <${this.name}> element should not be hidden`
-					});
+				if (name === 'aria-hidden') {
+					const value = attribute.get_static_value();
+
+					if (/^h[1-6]$/.test(this.name)) {
+						component.warn(attribute, {
+							code: `a11y-hidden`,
+							message: `A11y: <${this.name}> element should not be hidden`
+						});
+					} else if (typeof value === 'string' && !/\b(false|true)\b/i.test(value)) {
+						component.warn(attribute, {
+							code: `a11y-hidden-proptypes`,
+							message: `A11y: ${name} should have value "false" or "true"`
+						});
+					}
 				}
 			}
 

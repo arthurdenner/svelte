@@ -1,0 +1,33 @@
+[
+	{
+		"code": "a11y-hidden-proptypes",
+		"message": "A11y: aria-hidden should have value \"false\" or \"true\"",
+		"start": {
+			"line": 1,
+			"column": 5,
+			"character": 5
+		},
+		"end": {
+			"line": 1,
+			"column": 22,
+			"character": 22
+		},
+		"pos": 5
+	},
+
+	{
+		"code": "a11y-hidden-proptypes",
+		"message": "A11y: aria-hidden should have value \"false\" or \"true\"",
+		"start": {
+			"line": 2,
+			"column": 5,
+			"character": 31
+		},
+		"end": {
+			"line": 2,
+			"column": 21,
+			"character": 47
+		},
+		"pos": 31
+	}
+]
